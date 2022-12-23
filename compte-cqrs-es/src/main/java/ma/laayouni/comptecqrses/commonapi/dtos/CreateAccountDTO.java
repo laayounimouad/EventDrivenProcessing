@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateAccountDTO {
-    private double initialBanlance;
+    private double initialBalance;
     private String currency;
 }

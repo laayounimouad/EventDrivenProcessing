@@ -285,3 +285,10 @@ public class AccountServiceHandler {
     }
 }
 ```
+!**ERROR** : Unable to make field private static final long java.util.concurrent.ConcurrentSkipListSet.serialVersionUID accessible: module java.base does not "opens java.util.concurrent" to unnamed module @13e39c73
+
+-> *Fix* : add `--add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.util.concurrent=ALL-UNNAMED` to VM options 
+
+- [Source](https://github.com/x-stream/xstream/issues/262#issuecomment-1247342505):  
+   The workaround is to add all the --add-opens directives.
+   The classes in java.util.concurrent have been a problem for us, especially AtomicBoolean (tracked in #308). We are hesitant to add an --add-opens directive for java.util.concurrent because we would generally prefer to avoid serializing concurrent types,   

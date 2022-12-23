@@ -32,7 +32,7 @@ public class AccountCommandController {
         CompletableFuture<String> commandResponse=commandGateway.send(new
                 CreateAccountCommand(
                 UUID.randomUUID().toString(),
-                request.getInitialBanlance(),
+                request.getInitialBalance(),
                 request.getCurrency()
         ));
         return commandResponse;

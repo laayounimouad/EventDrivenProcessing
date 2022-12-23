@@ -18,6 +18,6 @@ public class Account {
     @Enumerated(EnumType.STRING)
     private AccountStatus  status;
     private String currency;
-    @OneToMany
+    @OneToMany(mappedBy = "account")
     private Collection<Operation> operations;
 }
