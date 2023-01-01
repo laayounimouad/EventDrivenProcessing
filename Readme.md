@@ -292,3 +292,5 @@ public class AccountServiceHandler {
 - [Source](https://github.com/x-stream/xstream/issues/262#issuecomment-1247342505):  
    The workaround is to add all the --add-opens directives.
    The classes in java.util.concurrent have been a problem for us, especially AtomicBoolean (tracked in #308). We are hesitant to add an --add-opens directive for java.util.concurrent because we would generally prefer to avoid serializing concurrent types,   
+
+

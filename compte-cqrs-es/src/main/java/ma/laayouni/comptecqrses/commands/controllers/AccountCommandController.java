@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.swing.text.html.parser.Entity;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.Future;
 import java.util.stream.Stream;
 
 @RestController
@@ -27,6 +26,7 @@ import java.util.stream.Stream;
 public class AccountCommandController {
     private CommandGateway commandGateway;
     private EventStore eventStore;
+
     @PostMapping("/create")
     public CompletableFuture<String> createAccount(@RequestBody CreateAccountDTO request){
         CompletableFuture<String> commandResponse=commandGateway.send(new

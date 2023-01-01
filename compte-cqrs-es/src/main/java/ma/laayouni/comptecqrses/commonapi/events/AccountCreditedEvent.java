@@ -1,7 +1,6 @@
 package ma.laayouni.comptecqrses.commonapi.events;
 
 import lombok.Getter;
-import ma.laayouni.comptecqrses.commonapi.enums.AccountStatus;
 
 public class AccountCreditedEvent extends BaseEvent<String>{
     @Getter private String currency;
